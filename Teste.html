@@ -1,0 +1,953 @@
+<html>
+<head>
+	<title>Atendimento B2B 1.5</title>
+	<meta charset="utf8">
+	<style>
+	body {
+	font-family: "Telefonica Text";
+	background: rgb(194,194,194);
+	background: linear-gradient(90deg, rgba(194,194,194,1) 0%, rgba(238,238,238,1) 5%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(238,238,238,1) 95%, rgba(194,194,194,1) 100%);
+	padding-left: 5%;
+	padding-right: 5%;
+	}
+	h1{font-size: 20px;padding:0; margin:0;}
+	ol, ul {
+	list-style: none;
+	}
+	div{
+	margin: 0;
+	padding: 0;
+	}
+	form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	}	
+	button{
+	width: 30%;
+	height: 22px;
+	border-radius: 3px;
+	background: rgb(223,222,222);
+	background: linear-gradient(0deg, rgba(223,222,222,1) 0%, rgba(255,255,255,1) 100%);
+	border: 1px solid gray;
+	}
+	input{
+	height: 22px;
+	}
+	.bot{
+	float: left;
+	width: 45%;
+	text-align: left;
+	margin: 2px;
+	}
+	.bot1{
+	float: left;
+	width: 31.6%;
+	text-align: left;
+	margin: 2px;
+	}
+	.bot2{
+	position-align: center;
+	width: 96%;
+	text-align: left;
+	margin: 2px 2px 2px 2px;
+	}
+	.bot3{
+	float: left;
+	width: 20%;
+	text-align: left;
+	margin: 2px 2px 2px 2px;
+	clear: right;
+	}
+	.bot4{
+	float: left;
+	width: 25%;
+	text-align: left;
+	margin: 2px 2px 2px 2px;
+	clear: right;
+	}
+	.bot5{
+	float: left;
+	width: 21%;
+	text-align: left;
+	margin: 2px 2px 2px 2px;
+	clear: right;
+	}
+	.bot6{
+	float: left;
+	width: 7%;
+	height: 25px;
+	margin: 2px;
+	clear: right;
+	font-size: 11px;
+
+	}
+	.caixatxt{
+	width: 47%;
+	margin: 2px 2px 2px 2px;
+	}
+	.caixatxt2{
+	float: left;
+	width: 87%;
+	height: 15%;
+	margin: 2px 2px 2px 2px;
+	}
+	.caixatxt3{
+	width: 15%;
+	float: left;
+	margin: 2px 2px 2px 2px;
+	}
+	.caixatxt4{
+	width: 27%;
+	float: left;
+	margin: 2px 2px 2px 2px;
+	}
+	.caixatxt5{
+	width: 70%;
+	float: left;
+	margin: 2px 2px 2px 2px;
+	
+	}
+	.caixatxt6{
+	width: 39.5%;
+	float: left;
+	margin: 2px 2px 2px 2px;
+	height: 25px;
+	
+	}
+	.menu{
+	margin-left:0;
+	width: 79%;
+	position: fixed;
+	list-style: none;
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	float:left;
+	background: rgb(195,195,195);
+	background: linear-gradient(90deg, rgba(195,195,195,1) 0%, rgba(243,243,243,1) 0%, rgba(255,255,255,1) 13%, rgba(255,255,255,1) 87%, rgba(243,243,243,1) 100%);
+	}
+	.menu li {
+	position:relative;
+	float: left;
+	width: 30%;
+	}
+	.menu li a{
+	color:#333;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: block;
+	}
+	.menu li a:hover{
+	color: black;
+	-moz-box-shadow:0 3px 10px 0 #CCC;
+	-webkit-box-shadow:0 3px 10px 0 #ccc;
+	text-shadow:0px 0px 5px #fff;
+	}
+	.menu li ul {
+	position: absolute;
+	padding: 10px;
+	width: 100%;
+	top: 30px;
+	left:0;
+	border: 1px solid #c0c0c0 ;
+	background-color: white;
+	-moz-box-shadow:0 3px 10px 0 #CCC;
+	-webkit-box-shadow:0 3px 10px 0 #ccc;
+	text-shadow:0px 0px 5px #fff;
+	display: none;	
+	border-radius: 3px;
+	}
+	.menu li:hover ul, .menu li.over ul{
+	display:block;
+	}
+	.menu li ul li{
+	font-size: 12px;
+	display: block;
+	width: 100%;
+	border: 2px;
+	padding: 2px;
+	}
+	.cmd{
+	font-size: 15px;
+	}
+	.cmdli{
+	background: black;
+	color: white;
+	}
+	.atenção{
+		color: red;
+		font-size: 5px;
+	}
+	.voip{
+	display:none;
+	padding: 2px;
+
+	}
+	.mano{
+	display:none;
+	padding: 2px;
+	}
+	.lprout{
+	display:none;
+	padding: 2px;
+
+	}
+	.bloq{
+	display:none;
+	padding: 2px;
+	
+	}
+	.genBand{
+	color: black;
+	background: rgb(231,200,237);
+	background: linear-gradient(180deg, rgba(231,200,237,1) 0%, rgba(250,250,250,1) 100%);
+	width: 100%;
+	border: 1px solid gray;
+	}
+	.Sonus{
+	color: black;
+	background: rgb(250,250,250);
+	background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(178,199,213,1) 100%);
+	width: 100%;
+	border: 1px solid gray;
+	}
+	.Neutro{
+	width: 100%;
+	border: 1px solid gray;
+	}
+	.Usuario{
+	float: left;
+	font-size: 17px;
+	padding: 5px;
+	margin: 0;
+	}
+	.divUsuario{
+	height: 40px;
+	padding-top: 35px;
+	padding-bottom: 10px;
+
+	}
+	.Principal{
+	padding-top: 35px;
+	
+	}
+	.Principal h1{font-size: 20px;padding:0; margin:0;}
+	.Principal h2{font-size: 15px;padding:0; margin:0;}
+	.divisoria{
+	width: 50%;
+	float: left;
+	}
+	.divisoria1{
+	width: 50%;
+	float: right;
+	}
+	
+	
+	
+</style>
+</head>
+<body onload="carregaUsuario()">
+
+	<ul class="menu"><h1>Atendimento B2B</h1>
+		<li><a>SBCs</a>
+			<ul>
+				<li class="atenção" title=" Verifique na gerencia GENBAND se a SBC está ativa através do comando 'cli ha'" style="font-size: 65%;">*ATENÇÃO CONFIRME!!</li>
+				<li><button onclick="copiarTexto2(ARQFI)" class="genBand" title="GENBAND">ARQ-FI (11)</button></li>
+				<li><button onclick="copiarTexto2(BRUAC)" class="Sonus" title="SONUS">BRU-AC (12)</button></li>
+				<li><button onclick="copiarTexto2(CASBO)" class="Sonus" title="SONUS">CAS-BO (21)</button></li>
+				<li><button onclick="copiarTexto2(CASCT)" class="Sonus" title="SONUS">CAS-CT (22)</button></li>
+				<li><button onclick="copiarTexto2(SJCRH)" class="genBand" title="GENBAND">SJC-RH (31)</button></li>
+				<li><button onclick="copiarTexto2(STSWL)" class="genBand" title="GENBAND">STS-WL (32)</button></li>
+				<li><button onclick="copiarTexto2(SNESA)" class="genBand" title="GENBAND">SNE-SA (41)</button></li>
+				<li><button onclick="copiarTexto2(SPOVU)" class="genBand" title="GENBAND">SPO-VU (42)</button></li>
+				<li><button onclick="copiarTexto2(SPOBE)" class="genBand" title="GENBAND">SPO-BE (51)</button></li>
+				<li><button onclick="copiarTexto2(SPOMB)" class="genBand" title="GENBAND">SPO-MB (52)</button></li>
+				<li><button onclick="copiarTexto2(SPOPD)" class="genBand" title="GENBAND">SPO-PD (72)</button></li>
+				<li><button onclick="copiarTexto2(SPOJG)" class="genBand" title="GENBAND">SPO-JG (71)</button></li>
+				<li><button onclick="copiarTexto2(SPOSI)" class="Sonus" title="SONUS">SPO-SI (81)</button></li>
+				<li><button onclick="copiarTexto2(SPOPA)" class="Sonus" title="SONUS">SPO-PA (82)</button></li>
+			</ul>
+		</li>
+		<li><a>Checklist</a>
+			<ul>
+				<li><button onclick="copiardmais1()" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento D+1">D + 1</button></li>
+				<li><button onclick="copiarmantenedor()" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao Mantenedor">MANTENEDOR</button></li>
+				<li><button onclick="copiarrouter()" class="Neutro" title="Copia um modelo de checklist  já preenchido com as informações relevantes para o atendimento ao técnico na ativação Router">ROUTER</button></li>
+				<li><button onclick="copiarlp()" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na ativação LP">LP</button></li>
+				<li><button onclick="copiarvoip()" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na ativação do SIP TRUNKING">SIP TRUNKING</button></li>
+				<li><button onclick="copiarmanobra()" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na manobra de fibra">MANOBRA</button></li>
+			</ul>
+		</li>
+		<li><a>Comandos</a>
+			<ul class="cmd">
+				<li class="atenção" title=" Verifique se o PABX-ID, PILOTO e o IP do PABX estão corretos!!" style="font-size: 70%;">*ATENÇÃO CONFIRME!!</li>
+				<li><button onclick="copiarlistpbxgenli()" class="genBand" title="GENBAND: copia o comando para confirmar os dados configurados na SBC a partir do pabxid">Linha:(pbxid)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea" >cli iedge lkup PBX_<span id="pbxidout" style="color: yellow"></span> | grep -E "RasIpAddr|  Destination Trunk Group|PAIDUserName"</p></li></span>
+				<li><button onclick="copiarlistpbxgenip()" class="genBand" title="GENBAND: copia o comando para confirmar os dados configurados na SBC a partir do IP do pabx">IP:(IP do pabx)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea" >cli iedge lkup <span id="pbxipout" style="color: yellow"></span> | more</p></li></span>
+				<li><button onclick="copiarlistpbxgendel()" class="genBand" title="GENBAND: copia o comando para deletar a linha na SBC a partir do pabxid">DELETE:(Pbxid)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea" >cli iedge delete PBX_<span id="pbxidout" style="color: yellow"></span> 0</p></li></span>
+				<li><button onclick="copiarlistpbxsonli()" class="Sonus" title="SONUS: copia o comando para verificar a linha configurada na SBC a partir do pabxid">Linha:(pbxid)</button></li>
+				<span hidden><li><p class="textarea">show configuration profiles digitParameterHandling dmPmRule | display set | match <span id="pbxidout1"></span> | match replacement | match value | more</p></li></span>
+				<li><button onclick="copiarlistpbxsonip()" class="Sonus" title="SONUS: copia o comando para verificar a IP configurado na SBC a partir do pabxid">IP:(pbxid)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea">show configuration addressContext default zone privaccess-voxip | display set | match ipAddress\|ingressIpPrefix | match <span id="pbxidout2" style="color: yellow"></span></p></li></span>
+				<li><button onclick="copiarlistpbxsonippbx()" class="Sonus" title="SONUS: copia o comando para verificar o pabxid configurado na SBC a partir do IP do pabx">IP:(IP do pabx)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea">show configuration addressContext default zone privaccess-voxip | display set | match ipAddress\|ingressIpPrefix | match <span id="pbxipout2" style="color: yellow"></span></p></li></span>
+				<li><button onclick="copiarlistpbxsondel()" class="Sonus" title="SONUS: copia o comando para deletar a linha na SBC a partir do pabxid">DELETE:(Pbxid)</button></li>
+				<li><button onclick="copiarlistpbxu2000()" class="Neutro" title="U2000: copia o comando para listar a linha na U2000 a partir do pabxid">U2000 (pbxid)</button></li>
+				<span hidden><li class="cmdli"><p class="textarea">LST SIPTG:TGN="<span id="pbxidout3" style="color: yellow"></span>";</p></li></span>
+				<li><button onclick="copiarlistSPG()" class="Neutro" title="SPG: copia o comando para listar a linha na SPG a partir da piloto">SPG (piloto)</button></li>
+			</ul>
+		</li>
+		
+	</ul>
+
+	<div class="Principal">
+	
+	<div class="divUsuario">
+	<h2>Informações do usuário:</h2>
+	<button onclick="nomeMatricula()" title="Altera os dados do usuário!" class="bot6" style="float: right; margin-right: 2%;">☰</button>
+	<p class="Usuario"><sup>Nome: </sup></p><p class="Usuario"id="nomeUsuario"></p>
+	<p class="Usuario"><sup>Matricula: </sup></p><p class="Usuario"id="matriculaUsuario"></p>
+	</div>
+	
+	<h2>Informações do atendimento:</h2>
+	<div class="divisoria2">
+
+	<button class="bot1" onclick="copiarTexto2('4133548211')" title="Copia o número da instância ficticia para atendimento B2B!">Instância GPS</button>
+	<button class="bot1" onclick="copiarTexto2('205035111')" title="Copia o número do VDN!">VDN: 205035111</button>
+	<button class="bot1" onclick="apagaForm()" title="Limpa o formulário para um novo atendimento!">Novo ID</button>
+		
+	<button onclick="copiarTexto('idin')" class="bot6" title="Copia o ID informado">❐</button><form><input id="idin" type='text' value='' onkeyup="insereid()" class="caixatxt6" placeholder="Id Vantive" /></form>
+
+	<button onclick="copiarTexto('tecin')" class="bot6" title="Copia o nome do técnico ou mantenedor informado">❐</button><form><input id="tecin"  type='text' value='' onkeyup="inseretec()" class="caixatxt6" placeholder="Nome Téc / Man"  /></form>
+	<br/>
+	<button onclick="copiarTexto('cttin')" class="bot6"title="Copia o contato do técnico ou mantenedor informado">❐</button><form><input id="cttin" type='text' value='' onkeyup="inserectt()" class="caixatxt6" placeholder="Contato Téc / Man"/></form>
+
+	<button onclick="copiarTexto('protgpsin')" class="bot6" title="Copia o protocolo do GPS informado">❐</button><form><input id="protgpsin" type='text' value='' onkeyup="insereprotgps()" class="caixatxt6" placeholder="Protocolo GPS"/></form>
+	
+	</div>
+	<div>
+	
+	<button type="button" onclick="Mudarestado('minhaDivvoip')" class="bot2">Informações VOIP</button>
+
+	<div class="voip" id="minhaDivvoip">
+	
+	<div class="divisoria">
+
+	<button onclick="copiarTexto('piloin')" class="bot">Piloto:</button><form><input id="piloin" type='text' value='' onkeyup="inserepilo()" class="caixatxt" placeholder=" 1133333000"/></form>
+
+	<button onclick="copiarTexto('pbxidin')" class="bot">Pbxid: </button><form><input id="pbxidin" type='text' value='' onkeyup="insere2()" class="caixatxt" placeholder=" spopivoxip12345"></form>
+	
+	</div>
+	<div class="divisoria1">
+
+	<button onclick="copiarTexto('pbxipin')" class="bot">IP do pabx: </button><form><input id="pbxipin" type='text' value='' onkeyup="insere3()" class="caixatxt" placeholder=" 10.9.204.123"></form>
+
+	<button onclick="copiarTexto('commuin')" class="bot">Community:</button><form><input id="commuin" type='text' value='' onkeyup="inserecommu()" class="caixatxt" placeholder=" 10429:10011"/></form>
+	
+	</div>
+
+	</div>
+
+	<button type="button" onclick="Mudarestado('minhaDivmano')" class="bot2">Informações Manobra</button>
+
+	<div id="minhaDivmano">
+<div class="divisoria">
+	<button onclick="copiarTexto('mandein')" class="bot4">De: </button><form><input id="mandein" type='text' value='' onkeyup="inseremande()" class="caixatxt4" placeholder="01-F#01"/></form>
+
+	<button onclick="copiarTexto('secdein')" class="bot5">Sec: </button><form><input id="secdein" type='text' value='' onkeyup="inseresecde()" class="caixatxt3" /></form>
+
+	
+	<button onclick="copiarTexto('slidin')" class="bot">Novo SLID:</button><form><input id="slidin" type='text'  value='' onkeyup="insereslid()" class="caixatxt" placeholder=" 0006123456"/></form>
+
+	<button onclick="copiarTexto('vlanin')" class="bot">Vlans</button><form><input id="vlanin" type='text' value='' onkeyup="inserevlan()" class="caixatxt" placeholder=" 3210 / 123"/></form>
+
+</div>
+	<div class="divisoria1">
+	
+	<button onclick="copiarTexto('manpain')" class="bot4" >Para: </button><form><input id="manpain" type='text' value='' onkeyup="inseremanpa()" class="caixatxt4" placeholder="02-F#02"/></form>
+
+	<button onclick="copiarTexto('secparain')" class="bot5">Sec: </button><form><input id="secparain" type='text' value='' onkeyup="inseresecpara()" class="caixatxt3" /></form>
+
+	<button onclick="copiarTexto('chamadoin')" class="bot">Chamado: </button><form><input id="chamadoin" type='text' value='' onkeyup="inserechamado()" class="caixatxt" placeholder=" REQ000001234567" /></form>
+	<button onclick="copiarTexto('idfibrain')" class="bot">Id Fibra: </button><form><input id="idfibrain" type='text' value='' onkeyup="insereidfibra()" class="caixatxt" placeholder=" 11000750000090"/></form>
+</div>
+
+	<button onclick="copiarTexto('cnlin')" class="bot3" style="width: 15%;">CNL: </button><form><input id="cnlin" type='text' value='' onkeyup="inserecnl()" class="caixatxt4" style="width: 17%;" placeholder="11000"/></form>
+
+	<button onclick="copiarTexto('escin')" class="bot3" style="width: 15%;">ES: </button><form><input id="escin" type='text' value='' onkeyup="insereesc()" class="caixatxt4" style="width: 15%;" placeholder=" PE" /></form>
+	
+	<button onclick="copiarTexto('atin')" class="bot3" style="width: 15%;">AT: </button><form><input id="atin" type='text' value='' onkeyup="insereat()" class="caixatxt4" style="width: 15%;" placeholder=" DT"/></form>
+
+	<button onclick="copiarTexto('codruain')" class="bot4">Cd.Rua</button><form><input id="codruain" type='text' value='' onkeyup="inserecodrua()" class="caixatxt4" style="width: 25%;" placeholder=" 124290" /></form>
+
+	<button onclick="copiarTexto('nroin')" class="bot5" style="width: 20%">N°: </button><form><input id="nroin" type='text' value='' onkeyup="inserenro()" class="caixatxt3" style="width: 24%;" placeholder=" 586"/></form>
+	
+
+
+	<button type="button" onclick="Mudarestado('minhaDivbloq')" class="bot1" style="width: 50%;" >Fibras Bloqueadas: </button>
+
+	<div class="bloq" id="minhaDivbloq">
+
+	<button onclick="copiarTexto('bloqin')" class="bot6" title="Copia as fibras bloqueadas" style="height:22px;">❐</button><form id="forbloq"><textarea  id="bloqin" type='text' value='' onkeyup="inserebloq()" class="caixatxt2" rows="2" placeholder="02-F#02 sec 02" style="height: 10%; width: 95.5%;"></textarea></form>
+	</div>
+	</div>
+
+	<button type="button" onclick="Mudarestado('minhaDivlprout')" class="bot2">Informações LP / ROUTER</button>
+
+	<div class="lprout" id="minhaDivlprout">
+	<div class="divisoria">
+
+	<button onclick="copiarTexto('vrf')" class="bot">VRF:</button><form><input id="vrf" class="caixatxt" placeholder=" V12345:VOIP_SIP_TRUNK_PAR4-s"/></form>
+
+	<button onclick="copiarTexto('rav')" class="bot">Backbone: </button><form><input id="rav" class="caixatxt" placeholder=" c-br-sp-spo-vm-rav-01"/></form>
+
+	<button onclick="copiarTexto('ipwin')" class="bot">IP WAN: </button><form><input id="ipwin" type='text' value='' onkeyup="insereipw()" class="caixatxt" placeholder=" 191.210.134.5"/></form>
+
+	<button onclick="copiarTexto('iplanin')" class="bot">IP LAN: </button><form><input id="iplanin" type='text' value='' onkeyup="insereiplan()" class="caixatxt" placeholder=" 10.9.204.122"/></form>
+
+	<button onclick="copiarTexto('iploin')" class="bot">IP LOOP: </button><form><input id="iploin" type='text' value='' onkeyup="insereiplo()" class="caixatxt" placeholder=" 186.238.76.236"/></form>
+</div>
+	<div class="divisoria1">
+	<button onclick="copiarTexto('rvtin')" class="bot"> RVT(Téc): </button><form><input id="rvtin" type='text' value='' onkeyup="inserervt()" class="caixatxt" placeholder="téc. informa  009599"/></form>
+
+	<button onclick="copiarTexto('respin')" class="bot">Resp.: </button><form><input id="respin" type='text' value='' onkeyup="insereresp()" class="caixatxt" placeholder="Nome do responsável"/></form>
+
+	<button onclick="copiarTexto('cttrespin')" class="bot">Resp./Ctt:</button><form><input id="cttrespin" type='text' value='' onkeyup="inserecttresp()" class="caixatxt" placeholder="Número telefone do responsável"/></form>
+
+	<button onclick="copiarTexto('docrespin')" class="bot">Resp./Doc: </button><form><input id="docrespin" type='text' value='' onkeyup="inseredocresp()" class="caixatxt" placeholder="RG ou CPF do Responsável"/></form>
+
+	<button onclick="copiarTexto('senhain')" class="bot">Senha: </button><form><input id="senhain" type='text' value='' onkeyup="inseresenha()" class="caixatxt" placeholder="Gerada pelo usuário  JJV751234"/></form>
+</div>
+	</div>
+	<button onclick="copiarTexto('obsin')" class="bot6" title="Copia as anotações do atendimento">❐ </button><form><textarea  id="obsin" type='text' value='' onkeyup="insereobs()" class="caixatxt2" cols="30" rows="5" placeholder="Anotações" ></textarea></form>
+	
+
+	</div>	
+	<span hidden>
+	<p class="textarea" >ID: <span id="idout"></span></p>
+	<p class="textarea" >Pilo: <span id="piloout"></span></p>
+	<p class="textarea" >mat: <span id="matout"></span></p>
+	<p class="textarea" >tec: <span id="tecout"></span></p>
+	<p class="textarea" >ctt: <span id="cttout"></span></p>
+	<p class="textarea" >commu: <span id="commuout"></span></p>
+	<p class="textarea" >mande: <span id="mandeout"></span></p>
+	<p class="textarea" >manpa: <span id="manpaout"></span></p>
+	<p class="textarea" >vlan: <span id="vlanout"></span></p>
+	<p class="textarea" >ipw: <span id="ipwout"></span></p>
+	<p class="textarea" >iplan: <span id="iplanout"></span></p>
+	<p class="textarea" >iplo: <span id="iploout"></span></p>
+	<p class="textarea" >rvt: <span id="rvtout"></span></p>
+	<p class="textarea" >resp: <span id="respout"></span></p>
+	<p class="textarea" >cttresp: <span id="cttrespout"></span></p>
+	<p class="textarea" >docresp: <span id="docrespout"></span></p>
+	<p class="textarea" >senha: <span id="senhaout"></span></p>
+	<p class="textarea" >obs: <span id="obsout"></span></p>
+	<p class="textarea" >protgps: <span id="protgpsout"></span></p>
+	<p class="textarea" >slid: <span id="slidout"></span></p>
+	<p class="textarea" >idfibra: <span id="idfibraout"></span></p>
+	<p class="textarea" >chamado: <span id="chamadoout"></span></p>
+	<p class="textarea" >cnl: <span id="cnlout"></span></p>
+	<p class="textarea" >esc: <span id="escout"></span></p>
+	<p class="textarea" >at: <span id="atout"></span></p>
+	<p class="textarea" >codrua: <span id="codruaout"></span></p>
+	<p class="textarea" >nro: <span id="nroout"></span></p>
+	<p class="textarea" >bloq: <span id="bloqout"></span></p>
+	<p class="textarea" >secde: <span id="secdeout"></span></p>
+	<p class="textarea" >secpara: <span id="secparaout"></span></p>
+
+	</span>
+
+	</div>
+
+	<script>
+	var ARQFI = 'NGN-BR-ARQ-FI-SBC1'
+	var BRUAC = 'NGN-BR-BRU-AC-SBC1'
+	var CASBO = 'NGN-BR-CAS-BON-SBC2'
+	var CASCT = 'NGN-BR-CAS-CT-SBC3'
+	var SJCRH = 'NGN-BR-SJC-RH-SBC1'
+	var STSWL = 'NGN-BR-STS-WL-SBC2'
+	var SNESA = 'NGN-BR-SNE-SA-SBC2'
+	var SPOVU = 'NGN-BR-SPO-VU-SBC1'
+	var SPOBE = 'NGN-BR-SPO-BE-SBC1'
+	var SPOMB = 'NGN-BR-SPO-MB-SBC2'
+	var SPOPD = 'NGN-BR-SPO-PD-SBC1'
+	var SPOJG = 'NGN-BR-SPO-JG-SBC2'
+	var SPOSI = 'NGN-BR-SPO-SI-SBC3'
+	var SPOPA = 'NGN-BR-SPO-PA-SBC4'
+	var automidia = 'http://si.gvt.com.br/AutomidiaWebFlex/AutomidiaWebFlex.html#'
+	var portalgc = 'http://svuxpreg1.gvt.net.br:9000/portalgc/gc/index.php'
+	var sbcvivo2 = 'http://svuxpopews14:8080/SBCTool-war/'
+
+
+	function carregaUsuario(){
+	var todos_os_cookies = document.cookie;
+	var nomeUsuario = getCookie("Nome");
+	var matriculaUsuario = getCookie("Matricula");
+	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
+	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
+	Mudarestado('minhaDivvoip');
+	Mudarestado('minhaDivmano');
+	Mudarestado('minhaDivlprout');
+	Mudarestado('minhaDivbloq');
+	if (nomeUsuario==''){
+	nomeMatricula();
+	apagaForm();
+	}
+	}
+
+
+	function getCookie(c_name) {
+		if (document.cookie.length > 0) {
+			c_start = document.cookie.indexOf(c_name + "=");
+			if (c_start != -1) {
+				c_start = c_start + c_name.length + 1;
+				c_end = document.cookie.indexOf(";", c_start);
+				if (c_end == -1) {
+					c_end = document.cookie.length;
+				}
+				return unescape(document.cookie.substring(c_start, c_end));
+			}
+		}
+		return "";
+	}
+
+
+	function createCookie (name, value, days) {
+			var expires;
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toGMTString();
+			}
+			else {
+				expires = "";
+			}
+			document.cookie = name + "=" + value + expires + "; path=/";
+			
+		}
+
+		
+	function nomeMatricula(){
+
+		// Confirmação
+		pergunta = prompt('Nome:', '');
+		pergunta2 = prompt('Matricula', '');
+		
+		// Verifica se o usuário postou algum valor
+		if(pergunta){
+			nomeUsuario = pergunta;
+		 } 
+		 if(pergunta2){
+			matriculaUsuario = pergunta2;
+		 } 
+		// Aqui vem a mensagem para o botão cancelar
+		else {
+			alert('Valor nulo retornado!');
+			nomeUsuario = ' '
+			matriculaUsuario = ' '
+		}
+		document.getElementById("nomeUsuario").innerHTML = nomeUsuario
+		document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario
+		createCookie ("Nome", nomeUsuario, 999)
+		createCookie ("Matricula", matriculaUsuario, 999)
+		
+	}
+		
+		
+	function copiarTexto(valor){
+				//captura o elemento input
+				var id = "#"+valor;
+				const inputTest = document.querySelector(id);
+				//seleciona todo o texto do elemento
+				inputTest.select();
+				//executa o comando copy
+				//aqui é feito o ato de copiar para a area de trabalho com base na seleção
+				document.execCommand('copy');
+			};
+
+	function copiarTexto2(valor){
+			var cont = valor
+
+			copyTextToClipboard(cont)
+
+			};
+		
+	function copyTextToClipboard(text) {
+	  var textArea = document.createElement("textarea");
+
+	  textArea.value = text;
+
+	  document.body.appendChild(textArea);
+	  textArea.select();
+
+	  try {
+		var successful = document.execCommand('copy');
+		var msg = successful ? 'successful' : 'unsuccessful';
+		console.log('Copying text command was ' + msg);
+	  } catch (err) {
+		console.log('Oops, unable to copy');
+		window.prompt("Copie para área de transferência: Ctrl+C e tecle Enter", text);
+	  }
+
+	  document.body.removeChild(textArea);
+	}	
+
+			
+		
+	var pbxidout = document.getElementById('pbxidout', 'pbxidout1')
+	var pbxid3 = document.getElementById('pbxidin')
+		
+	function insere2() {
+			var pbxidin = pbxid3.value;
+			if (pbxidin == '') pbxidin = 0;	
+			pbxidout.innerHTML = pbxidin;
+			pbxidout2.innerHTML = pbxidin;
+			pbxidout3.innerHTML = pbxidin;
+			htmlExemplo = pbxidin;
+			resultado = htmlExemplo.substring(5, htmlExemplo.length);
+			pbxidout1.innerHTML = resultado;
+			
+		}
+
+	var pbxipout = document.getElementById('pbxipout')
+	var pbxip3 = document.getElementById('pbxipin')
+		
+	function insere3() {
+			var pbxipin = pbxip3.value;
+			if (pbxipin == '') pbxipin = 0;
+					
+			pbxipout.innerHTML = pbxipin;
+			pbxipout2.innerHTML = pbxipin;
+			
+			
+		}
+		
+	var idout = document.getElementById('idout')
+	var id3 = document.getElementById('idin')
+		
+	function insereid() {
+			var idin = id3.value;	
+			idout.innerHTML = idin;	
+		}
+
+	var piloout = document.getElementById('piloout')
+	var pilo = document.getElementById('piloin')
+		
+	function inserepilo() {
+			var piloin = pilo.value;	
+			piloout.innerHTML = piloin;
+				
+		}
+
+	var tecout = document.getElementById('tecout')
+	var tec = document.getElementById('tecin')
+		
+	function inseretec() {
+			var tecin = tec.value;
+			tecout.innerHTML = tecin;
+		}
+		
+	var matout = document.getElementById('matout')
+	var mat = document.getElementById('matin')
+		
+	function inseremat() {
+			var matin = mat.value;
+			matout.innerHTML = matin;
+		}	
+
+	var cttout = document.getElementById('cttout')
+	var ctt = document.getElementById('cttin')
+		
+	function inserectt() {
+			var cttin = ctt.value;
+			cttout.innerHTML = cttin;
+		}	
+
+
+	var commuout = document.getElementById('commuout')
+	var commu = document.getElementById('commuin')
+		
+	function inserecommu() {
+			var commuin = commu.value;	
+			commuout.innerHTML = commuin;
+		}	
+
+	var mandeout = document.getElementById('mandeout')
+	var mande = document.getElementById('mandein')
+		
+	function inseremande() {
+			var mandein = mande.value;	
+			mandeout.innerHTML = mandein;
+		}	
+
+	var manpaout = document.getElementById('manpaout')
+	var manpa = document.getElementById('manpain')
+		
+	function inseremanpa() {
+			var manpain = manpa.value;
+			manpaout.innerHTML = manpain;
+		}	
+		
+	var vlanout = document.getElementById('vlanout')
+	var vlan = document.getElementById('vlanin')
+		
+	function inserevlan() {
+			var vlanin = vlan.value;	
+			vlanout.innerHTML = vlanin;
+		}	
+
+	var ipwout = document.getElementById('ipwout')
+	var ipw = document.getElementById('ipwin')
+		
+	function insereipw() {
+			var ipwin = ipw.value;	
+			ipwout.innerHTML = ipwin;
+				
+		}	
+
+	var iplanout = document.getElementById('iplanout')
+	var iplan = document.getElementById('iplanin')
+		
+	function insereiplan() {
+			var iplanin = iplan.value;	
+			iplanout.innerHTML = iplanin;	
+		}	
+
+	var iploout = document.getElementById('iploout')
+	var iplo = document.getElementById('iploin')
+		
+	function insereiplo() {
+			var iploin = iplo.value;	
+			iploout.innerHTML = iploin;
+		}	
+
+	var rvtout = document.getElementById('rvtout')
+	var rvt = document.getElementById('rvtin')
+		
+	function inserervt() {
+			var rvtin = rvt.value;	
+			rvtout.innerHTML = rvtin;
+		}	
+		
+	var respout = document.getElementById('respout')
+	var resp = document.getElementById('respin')
+		
+	function insereresp() {
+			var respin = resp.value;		
+			respout.innerHTML = respin;	
+		}	
+
+	var cttrespout = document.getElementById('cttrespout')
+	var cttresp = document.getElementById('cttrespin')
+		
+	function inserecttresp() {
+			var cttrespin = cttresp.value;	
+			cttrespout.innerHTML = cttrespin;
+		}	
+
+	var docrespout = document.getElementById('docrespout')
+	var docresp = document.getElementById('docrespin')
+		
+	function inseredocresp() {
+			var docrespin = docresp.value;	
+			docrespout.innerHTML = docrespin;
+		}	
+
+	var senhaout = document.getElementById('senhaout')
+	var senha = document.getElementById('senhain')
+		
+	function inseresenha() {
+			var senhain = senha.value;	
+			senhaout.innerHTML = senhain;
+		}	
+
+	var obsout = document.getElementById('obsout')
+	var obs = document.getElementById('obsin')
+		
+	function insereobs() {
+			var obsin = obs.value;	
+			obsout.innerHTML = obsin;
+		}	
+
+	var protgpsout = document.getElementById('protgpsout')
+	var protgps = document.getElementById('protgpsin')
+		
+	function insereprotgps() {
+			var protgpsin = protgps.value;
+			protgpsout.innerHTML = protgpsin;
+		}	
+
+	var slidout = document.getElementById('slidout')
+	var slid = document.getElementById('slidin')
+		
+	function insereslid() {
+			var slidin = slid.value;
+			if (slidin == '') slidin = '';
+			slidout.innerHTML = slidin;
+		}	
+
+	var idfibraout = document.getElementById('idfibraout')
+	var idfibra = document.getElementById('idfibrain')
+		
+	function insereidfibra() {
+			var idfibrain = idfibra.value;
+			idfibraout.innerHTML = idfibrain;
+		}	
+
+	var chamadoout = document.getElementById('chamadoout')
+	var chamado = document.getElementById('chamadoin')
+		
+	function inserechamado() {
+			var chamadoin = chamado.value;
+			chamadoout.innerHTML = chamadoin;
+		}	
+
+	var cnlout = document.getElementById('cnlout')
+	var cnl = document.getElementById('cnlin')
+		
+	function inserecnl() {
+			var cnlin = cnl.value;	
+			cnlout.innerHTML = cnlin;	
+		}		
+
+	var escout = document.getElementById('escout')
+	var esc = document.getElementById('escin')
+		
+	function insereesc() {
+			var escin = esc.value;	
+			escout.innerHTML = escin;	
+		}
+		
+	var atout = document.getElementById('atout')
+	var at = document.getElementById('atin')
+		
+	function insereat() {
+			var atin = at.value;	
+			atout.innerHTML = atin;	
+		}	
+		
+	var codruaout = document.getElementById('codruaout')
+	var codrua = document.getElementById('codruain')
+		
+	function inserecodrua() {
+			var codruain = codrua.value;	
+			codruaout.innerHTML = codruain;	
+		}	
+
+	var nroout = document.getElementById('nroout')
+	var nro = document.getElementById('nroin')
+		
+	function inserenro() {
+			var nroin = nro.value;	
+			nroout.innerHTML = nroin;	
+		}	
+
+	var bloqout = document.getElementById('bloqout')
+	var bloq = document.getElementById('bloqin')
+		
+	function inserebloq() {
+			var bloqin = bloq.value;	
+			bloqout.innerHTML = bloqin;	
+		}	
+
+	var secdeout = document.getElementById('secdeout')
+	var secde = document.getElementById('secdein')
+		
+	function inseresecde() {
+			var secdein = secde.value;	
+			secdeout.innerHTML = secdein;	
+		}	
+
+	var secparaout = document.getElementById('secparaout')
+	var secpara = document.getElementById('secparain')
+		
+	function inseresecpara() {
+			var secparain = secpara.value;
+			
+					
+			secparaout.innerHTML = secparain;
+				
+		}	
+
+	function apagaForm() {
+		window.location.reload(true);
+	}
+
+	function Mudarestado(el) {
+	  var display = document.getElementById(el).style.display;
+	  if (display == "none")
+		document.getElementById(el).style.display = 'block';
+	  else
+		document.getElementById(el).style.display = 'none';
+	}
+
+	function copiardmais1() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento D+1\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nPiloto: ' + piloout.innerHTML + '\nPbxid: ' + pbxidout.innerHTML + '\nCommunity: ' + commuout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	function copiarmantenedor() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento Mantenedor\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nMantenedor: ' + tecout.innerHTML + ' \nContato: ' + cttout.innerHTML + '\nPiloto: ' + piloout.innerHTML + '\nPbxid: ' + pbxidout.innerHTML + '\nCommunity: ' + commuout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	function copiarrouter() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento Router\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nTécnico: ' + tecout.innerHTML + ' \nContato Tecnico: ' + cttout.innerHTML + '\nIP WAN: ' + ipwout.innerHTML + '\nIP LAN: ' + iplanout.innerHTML + '\nIP LOOPBACK: ' + iploout.innerHTML + '\nRVT: ' + rvtout.innerHTML + '\nResponsavel: ' + respout.innerHTML + '\nContato Responsavel: ' + cttrespout.innerHTML + '\nDocumento Responsavel: ' + docrespout.innerHTML + '\nSenha: ' + senhaout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	function copiarlp() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento LP\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nTécnico: ' + tecout.innerHTML + ' \nContato Tecnico: ' + cttout.innerHTML + '\nRVT: ' + rvtout.innerHTML + '\nResponsavel: ' + respout.innerHTML + '\nContato Responsavel: ' + cttrespout.innerHTML + '\nDocumento Responsavel: ' + docrespout.innerHTML + '\nSenha: ' + senhaout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	function copiarvoip() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento VOIP\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nTécnico: '+ tecout.innerHTML + ' \nPiloto: ' + piloout.innerHTML + '\nPbxid: ' + pbxidout.innerHTML + '\nCommunity: ' + commuout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	function copiarmanobra() {
+	  copyTextToClipboard('\n-------------------------------------------------\n\n	      Atendimento Manobra\nNome(RE): ' + nomeUsuario.innerHTML + ' (' + matriculaUsuario.innerHTML + ')\nID: ' + idout.innerHTML + '\nTécnico: ' + tecout.innerHTML + '\nManobra de: ' + mandeout.innerHTML + ' Secundário ' + secdeout.innerHTML + '\nManobra para: ' + manpaout.innerHTML + ' Secundário ' + secparaout.innerHTML + '\nId Fibra: ' + idfibraout.innerHTML + '\nVlans Rede / Usuário: ' + vlanout.innerHTML + '\nChamado: ' + chamadoout.innerHTML + '\nNovo SLID: ' + slidout.innerHTML + '\nProtocolo GPS: ' + protgpsout.innerHTML  + '\nFibras bloqueadas: ' + bloqout.innerHTML + '\nObservações: ' + obsout.innerHTML + '\n\n-------------------------------------------------\n');
+	}
+
+	  function copiarlistpbxgenli() {
+	  copyTextToClipboard('cli iedge lkup PBX_' + pbxidout.innerHTML + ' | grep -E "RasIpAddr|  Destination Trunk Group|PAIDUserName\"\n\n\n')
+	  }
+	  
+	  function copiarlistpbxgenip() {
+	  copyTextToClipboard('cli iedge lkup ' + pbxipout.innerHTML + ' | more\n\n\n') 
+	  }
+	  
+	  function copiarlistpbxgendel() {
+	  copyTextToClipboard('cli iedge delete PBX_' + pbxidout.innerHTML + ' 0\n\n\n' )
+	  }
+	  
+	  function copiarlistpbxsonli() {
+	  copyTextToClipboard('show configuration profiles digitParameterHandling dmPmRule | display set | match ' + pbxidout1.innerHTML + ' | match replacement | match value | more\n\n\n')
+	  }
+	  
+	  function copiarlistpbxsonip() {
+	  copyTextToClipboard('show configuration addressContext default zone privaccess-voxip | display set | match ipAddress\\|ingressIpPrefix | match ' + pbxidout.innerHTML + '\n\n\n' )
+	  }
+	  
+	  function copiarlistpbxsonippbx() {
+	  copyTextToClipboard('show configuration addressContext default zone privaccess-voxip | display set | match ipAddress\\|ingressIpPrefix | match ' + pbxipout.innerHTML + '\n\n\n') 
+	  }
+	  
+	  function copiarlistpbxsondel() {
+	  copyTextToClipboard('configure\nset addressContext default zone privaccess-voxip sipTrunkGroup ' + pbxidout.innerHTML + ' state disabled\nset addressContext default zone privaccess-voxip sipTrunkGroup ' + pbxidout.innerHTML + ' mode outOfService\ncommit\ndelete addressContext default zone privaccess-voxip sipTrunkGroup ' + pbxidout.innerHTML + '\ndelete addressContext default zone privaccess-voxip ipPeer ' + pbxidout.innerHTML + '\ndelete profiles ipSignalingPeerGroup ' + pbxidout.innerHTML + '_IPSIGP\ndelete profiles digitParameterHandling dmPmRule ' + pbxidout1.innerHTML + '_' + piloout.innerHTML + '\ncommit\n\n\n')
+	  }
+	  
+	  function copiarlistpbxu2000() {
+	  copyTextToClipboard('LST SIPTG:TGN=\"' + pbxidout.innerHTML + '\";' ) 
+	  }
+	  
+	   function copiarlistSPG() {
+	   var instancia = '+55'+piloout.innerHTML 
+	  copyTextToClipboard('USE ME:MENAME=HSS;\nLST_HDYNDATA: IMPI="' + instancia + '";\nLST_HSDAINF: IMPI="' + instancia + '";\nLST_HSUB: IMPI="' + instancia + '";\nLST_HVNTPLID: IMPU="sip:' + instancia + '@ims4.vivo.net.br";\nLST_HVNTPLID: IMPU="tel:' + instancia + '";\nLST_HREGAUTH: IMPU="sip:' + instancia + '@ims4.vivo.net.br";\nLST_HREGAUTH: IMPU="tel:' + instancia + '";\nLST_HSPSHARE: IMPU="sip:' + instancia + '@ims4.vivo.net.br";\nLST_HSIFC: IMPU="sip:' + instancia + '@ims4.vivo.net.br";\nLST_HNNRLI: IMPU="sip:' + instancia + '@ims4.vivo.net.br";\nLST_HNNRLI: IMPU="tel:' + instancia + '";') 
+	  }
+	  
+	</script>
+
+</body>
+</html>
