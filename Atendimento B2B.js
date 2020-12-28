@@ -493,7 +493,7 @@ for (const property in object) {
 }
 
 
-function listandoAtendimento(object) {
+function listandoAtendimento() {
   //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 
   //const object = { a: 1, b: 2, c: 3 };
