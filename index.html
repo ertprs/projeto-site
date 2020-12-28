@@ -1,39 +1,233 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML5 Storage com JSON</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="funcoes.js"></script>
-</head>
+<title>Suporte B2B</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="style.css" type="text/css">
 <body>
-	<form id="frmCadastro">
-		<ul>
-			<li>
-				<label for="txtCodigo">Código:</label>
-				<input type="text" id="txtCodigo"/>
-			</li>
-			<li>
-				<label for="txtNome">Nome:</label>
-				<input type="text" id="txtNome"/>
-			</li>
-			<li>
-				<label for="txtTelefone">Telefone:</label>
-				<input type="text" id="txtTelefone"/>
-			</li>
-			<li>
-				<label for="txtEmail">Email:</label>
-				<input type="text" id="txtEmail"/>
-			</li>
-			<li>
-				<input type="submit" value="Salvar" id="btnSalvar"/>
-			</li>
-		</ul>
-	</form>
 
-	<table id="tblListar">
+<header id="head_b2b">
 
-	</table>
-	<a href="https://juciel-vieira.github.io/projeto-site/Teste.html"> Teste </a>
+<p id="cop">Copiado OK</p>
+
+	<h1 class="titulo">Atendimento B2B</h1>
+		<ul class="menu">
+		<li><a href=# id="sbcs">SBCs</a>
+			<ul id="listaSBC">
+				<li title=" Verifique na gerencia GENBAND se a SBC está ativa através do comando 'cli ha'"><p href=# class="atenção"> * ATENÇÃO CONFIRME!!</p></li>
+				<li><a href =# id="ARQFI" class="genBand" title="GENBAND">ARQ-FI (11)</a></li>
+				<li><a href =# id="BRUAC" class="Sonus" title="SONUS">BRU-AC (12)</a></li>
+				<li><a href =# id="CASBO" class="Sonus" title="SONUS">CAS-BO (21)</a></li>
+				<li><a href =# id="CASCT" class="Sonus" title="SONUS">CAS-CT (22)</a></li>
+				<li><a href =# id="SJCRH" class="genBand" title="GENBAND">SJC-RH (31)</a></li>
+				<li><a href =# id="STSWL" class="genBand" title="GENBAND">STS-WL (32)</a></li>
+				<li><a href =# id="SNESA" class="genBand" title="GENBAND">SNE-SA (41)</a></li>
+				<li><a href =# id="SPOVU" class="genBand" title="GENBAND">SPO-VU (42)</a></li>
+				<li><a href =# id="SPOBE" class="genBand" title="GENBAND">SPO-BE (51)</a></li>
+				<li><a href =# id="SPOMB" class="genBand" title="GENBAND">SPO-MB (52)</a></li>
+				<li><a href =# id="SPOPD" class="genBand" title="GENBAND">SPO-PD (72)</a></li>
+				<li><a href =# id="SPOJG" class="genBand" title="GENBAND">SPO-JG (71)</a></li>
+				<li><a href =# id="SPOSI" class="Sonus" title="SONUS">SPO-SI (81)</a></li>
+				<li><a href =# id="SPOPA" class="Sonus" title="SONUS">SPO-PA (82)</a></li>
+
+			</ul>
+		</li>
+		<li><a href=# id="comandos">CMD de Linha</a>
+			<ul id="listaComandos">
+				<li title=" Verifique se o PABX-ID, PILOTO e o IP do PABX estão corretos!!" ><p class="atenção">* ATENÇÃO CONFIRME!!</p></li>
+				<li><a href=# id="listpbxgenli" class="genBand" title="GENBAND: copia o comando para confirmar os dados configurados na SBC a partir do pabxid">Linha:(pbxid)</a></li>
+				<li><a href=# id="listpabxgenip" class="genBand" title="GENBAND: copia o comando para confirmar os dados configurados na SBC a partir do IP do pabx">IP:(IP do pabx)</a></li>
+				<li><a href=# id="delpabxgen" class="genBand" title="GENBAND: copia o comando para deletar a linha na SBC a partir do pabxid">DELETE:(Pbxid)</a></li>
+				<li><a href=# id="listpbxsonli" class="Sonus" title="SONUS: copia o comando para verificar a linha configurada na SBC a partir do pabxid">Linha:(pbxid)</a></li>
+				<li><a href=# id="listpbxsonip" class="Sonus" title="SONUS: copia o comando para verificar a IP configurado na SBC a partir do pabxid">IP:(pbxid)</a></li>
+				<li><a href=# id="listpbxsonippbx" class="Sonus" title="SONUS: copia o comando para verificar o pabxid configurado na SBC a partir do IP do pabx">IP:(IP do pabx)</a></li>
+				<li><a href=# id="delpbxson" class="Sonus" title="SONUS: copia o comando para deletar a linha na SBC a partir do pabxid">DELETE:(Pbxid)</a></li>
+				<li><a href=# id="convson" class="Sonus" title="SONUS: gera o comando para configurações do conversor para o técnico enviar no conversor">CONVERSOR:(Piloto)</a></li>
+				<li><a href=# id="listpbxu2000" class="Neutro" title="U2000: copia o comando para listar a linha na U2000 a partir do pabxid">U2000 (pbxid)</a></li>
+				<li><a href=# id="listtgu2000" class="Neutro" title="TG U2000: copia o comando para listar a TG do cliente na U2000 a partir do pabxid">U2000 (TGID)</a></li>
+				<li><a href=# id="listSPG" class="Neutro" title="SPG: copia o comando para listar a linha na SPG a partir da piloto">SPG (piloto)</a></li>
+			</ul>
+		</li>
+		<li><a href=# id="comandos">CMD Outros</a>
+			<ul id="listaComandos">
+				<li title=" Verifique se o IP do PABX está correto!!" ><p class="atenção">* ATENÇÃO CONFIRME!!</p></li>
+				<li><a href=# id="ciscon" class="Neutro" title="Gera o comando de teste ping do router Cisco para o concentrador(10.255.240.111)">Cisco Concentrador</a></li>
+				<li><a href=# id="cispbx" class="Neutro" title="Gera o comando de teste ping do router Cisco para o PABX">Cisco PABX</a></li>
+				<li><a href=# id="hpcon" class="Neutro" title="Gera o comando de teste ping do router HP para o concentrador(10.255.240.111">HP Concentrador</a></li>
+				<li><a href=# id="hppbx" class="Neutro" title="Gera o comando de teste ping do router HP para o PABX">HP PABX</a></li>
+				<li><a href=# id="rota" class="Neutro" title="Mostra na tela o comando que o técnico deverá configurar no promt do windowns para criar uma rota no notebook">Rota Config</a></li>
+			</ul>
+		</li>
+		<li><a href=#>Checklist</a>
+			<ul>
+				<li><a href=# id="btn_checkDmais" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento D+1">D + 1</a></li>
+				<li><a href=# id="btn_checkMant" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao Mantenedor">MANTENEDOR</a></li>
+				<li><a href=# id="btn_checkRout" class="Neutro" title="Copia um modelo de checklist  já preenchido com as informações relevantes para o atendimento ao técnico na ativação Router">ROUTER</a></li>
+				<li><a href=# id="btn_checkLP" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na ativação LP">LP</a></li>
+				<li><a href=# id="btn_checkVOIP" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na ativação do SIP TRUNKING">SIP TRUNKING</a></li>
+				<li><a href=# id="btn_checkManobra" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento ao técnico na manobra de fibra">MANOBRA</a></li>
+				<li><a href=# id="btn_checkAgenda" class="Neutro" title="Copia um modelo de checklist já preenchido com as informações relevantes para o atendimento de agenda">AGENDA V²</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</header>
+
+
+
+<section id="sup">
+
+
+<div class="divUsuario">
+
+<input type="button" class="bot6" id="NomeMatricula" title="Altera os dados do usuário!" style="float: right; margin-right: 2%;" value="☰">
+<p class="Usuario"><sup>Nome: </sup></p><p class="Usuario"id="nomeUsuario"></p>
+<p class="Usuario"><sup>Matricula: </sup></p><p class="Usuario"id="matriculaUsuario"></p>
+</div>
+
+
+<section>
+
+	<div id="Geral">
+	<div>
+	<input type="button" class="bot1" id="ficticia" title="Copia o número da instância ficticia para atendimento B2B!" value="Instância GPS">
+	<input type="button" class="bot1" id="vdnVivo1" title="Copia o número do VDN B2B Vivo 1!" value="VDN: 205035111">
+	<input type="button" class="bot1" id="novoAtd" title="Limpa o formulário para um novo atendimento!" value="Novo ID"/><br><br>
+	</div>
+	<div id="Geral_1">
+	<input type="button" id="btn_idos" class="bot6" title="Copia o ID informado" value="❐"/><input id="idos" type='text' value='' class="caixatxt6" placeholder="ID / OS" />
+
+	<input type="button" id="btn_nometec" class="bot6" title="Copia o nome do técnico ou mantenedor informado" value="❐"/><input id="nometec"  type='text' value='' class="caixatxt6" placeholder="Nome Téc / Man"  />
+
+	<input type="button" id="btn_nomecliente" class="bot6" title="Copia o nome do cliente informado" value="❐"/><input id="nomecliente"  type='text' value='' class="caixatxt6" placeholder="Nome Cliente"  />
+
+	<input type="button" id="btn_ctttec" class="bot6" title="Copia o contato do técnico ou mantenedor informado" value="❐"/><input id="ctttec" type='text' value='' class="caixatxt6" placeholder="Contato Téc / Man"/>
+
+	<input type="button" id="btn_protgps" class="bot6" title="Copia o protocolo do GPS informado" value="❐"/><input id="protgps" type='text' value='' onkeyup="insereprotgps()" class="caixatxt6" placeholder="Protocolo GPS"/>
+	
+	<input type="button" id="btn_chamado" class="bot6" title="Copia o nro de chamado informado" value="❐" /><input id="chamado" type='text' value='' class="caixatxt6" placeholder="N° do chamado"/>
+	</div>
+	</div>
+	
+		<input type="button" id="btn_minhaDivvoip" class="bot2" value="Informações VOIP" />
+
+		<div class="voip" id="minhaDivvoip">
+		
+		<div class="divisoria">
+
+		<input type="button" id="btn_piloto" class="bot" value="Piloto:"/><input id="piloto" type='text' value='' class="caixatxt"/>
+
+		<input type="button" id="btn_pabxid" class="bot" value="Pbxid:"/><input id="pabxid" type='text' value='' class="caixatxt"/>
+		
+		</div>
+		<div class="divisoria1">
+
+		<input type="button" id="btn_ippabx" class="bot" value="IP do pabx:"/><input id="ippabx" type='text' value='' class="caixatxt"/>
+		
+		<input type="button" id="btn_commu" class="bot" value="Community:"/><input id="commu" type='text' value=''  class="caixatxt" />
+			
+		</div>	
+		</div>
+		
+		
+		<input type="button" id="btn_minhaDivmano" class="bot2" value="Informações Manobra" />
+		
+
+	<div id="minhaDivmano">
+		<div class="divisoria">
+			<input type="button" id="btn_mande" class="bot4" value="De:"/><input id="mande" type='text' value='' class="caixatxt4" placeholder="01-F#01"/>
+
+			<input type="button" id="btn_secde" class="bot5" value="Sec: "/><input id="secde" type='text' value=''  class="caixatxt3" />
+
+			
+			<input type="button" id="btn_slid" class="bot" value="Novo SLID:"/><input id="slid" type='text'  value='' class="caixatxt" />
+
+			<input type="button" id="btn_vlans" class="bot" value="Vlans:" /><input id="vlans" type='text' value='' class="caixatxt" />
+			<input type="button" id="btn_idfibra" class="bot" value="Id Fibra: " /><input id="idfibra" type='text' value='' class="caixatxt" />
+		
+
+		</div>
+		<div class="divisoria1">
+		
+		<input type="button" id="btn_manpa" class="bot4" value="Para: "/><input id="manpa" type='text' value='' class="caixatxt4" placeholder="02-F#02"/>
+
+		<input type="button" id="btn_secpa" class="bot5" value="Sec: "/><input id="secpa" type='text' value='' class="caixatxt3" />
+
+		
+		<input type="button" id="btn_cnl" class="bot4" value="CNL: " /><input id="cnl" type='text' value='' class="caixatxt4" />
+
+		<input type="button" id="btn_codrua" class="bot5" value="Cd.Rua" /><input id="codrua" type='text' value='' class="caixatxt3" />
+		
+		<input type="button" id="btn_es" class="bot4" value="ES: "/ ><input id="es" type='text' value='' class="caixatxt4" />
+		
+		<input type="button" id="btn_nro" class="bot5" value="N°: "/><input id="nro" type='text' value='' class="caixatxt3" />
+		
+		<input type="button" id="btn_at" class="bot4" value="AT: "/><input id="at" type='text' value='' class="caixatxt4" />
+		
+		</div>
+	
+		<input type="button" id="btn_minhaDivbloq" class="bot1" style="width: 50%;" value="Fibras Bloqueadas:"/>
+
+		<div class="bloq" id="minhaDivbloq">
+
+		<input type="button" id="btn_bloq" class="bot6" title="Copia as fibras bloqueadas" style="height:22px;" value="❐"/><textarea  id="bloq" type='text' value='' class="caixatxt2" rows="2" style="height: 10%; width: 95.5%;"></textarea>
+		</div>
+
+	</div>
+	
+		<input type="button" id="btn_minhaDivlprout" class="bot2" value="Informações LP / ROUTER" />
+
+		<div class="lprout" id="minhaDivlprout">
+			<div class="divisoria">
+
+				<input type="button" id="btn_vrf" class="bot" value="VRF:"/><input id="vrf" class="caixatxt" placeholder=" V12345:VOIP_SIP_TRUNK_PAR4-s"/>
+
+				<input type="button" id="btn_rav" class="bot" value="Backbone:"/><input id="rav" class="caixatxt" placeholder=" c-br-sp-spo-vm-rav-01"/>
+
+				<input type="button" id="btn_ipwan" class="bot" value="IP WAN:"/><input id="ipwan" type='text' value='' class="caixatxt" placeholder=" 191.210.134.5"/>
+
+				<input type="button" id="btn_iplan" class="bot" value="IP LAN:"/><input id="iplan" type='text' value='' class="caixatxt" placeholder=" 10.9.204.122"/>
+
+				<input type="button" id="btn_iplop" class="bot" value="IP LOOP:"/><input id="iplop" type='text' value='' class="caixatxt" placeholder=" 186.238.76.236"/>
+				
+			</div>
+			<div class="divisoria1">
+				<input type="button" id="btn_rvt" class="bot" value="RVT(Téc):"/><input id="rvt" type='text' value='' class="caixatxt" placeholder="Informado pelo técnico Ex:009599"/>
+
+				<input type="button" id="btn_resp" class="bot" value="Resp.:"/><input id="resp" type='text' value='' class="caixatxt" placeholder="Nome do responsável"/>
+
+				<input type="button" id="btn_cttresp" class="bot" value="Resp./Ctt:"/><input id="cttresp" type='text' value='' class="caixatxt" placeholder="Número telefone do responsável"/>
+
+				<input type="button" id="btn_docresp" class="bot" value="Resp./Doc:"/><input id="docresp" type='text' value='' class="caixatxt" placeholder="RG ou CPF do Responsável"/>
+
+				<input type="button" id="btn_senha" class="bot" value="Senha:"/><input id="senha" type='text' value='' class="caixatxt" placeholder="Gerada pelo usuário EX: JJV751234"/>
+			</div>
+		</div>
+	
+	
+	<input type="button" id="btn_obs" class="bot6" title="Copia as anotações do atendimento" value="❐" /><textarea  id="obs" type='text' value='' class="caixatxt2" cols="30" rows="5" placeholder="Anotações" ></textarea>
+
+	
+		
+	<script type="text/javascript" src="Atendimento B2B.js"></script>
+	</section>
+
+</section>
+
+<section id="sup-1">
+
+<h1>Dicas para auxilio no Atendimento!</h1>
+
+<p> - Quando enviar scripts na gerencia SONUS existem algumas alterações de script, caso o cliente utilize conversor <a href="conf_conv_sonus.html" target=_blank>clique aqui para visualizar</a>.</p>
+
+
+<p> - Após o envio de scripts ele não efetua no softphone, listar as configurações do cliente <a href="listar_sip.html" target=_blank>clique aqui para visualizar</a>.</p>
+
+
+</section>
+
 </body>
+
+
 </html>
