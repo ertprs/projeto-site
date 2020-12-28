@@ -375,18 +375,18 @@ function copiarTexto(valor){
 			
 
 function carregaUsuario(){
-	//var todos_os_cookies = document.cookie;
-	//var nomeUsuario = getCookie("nomeB2B");
-	//var matriculaUsuario = getCookie("matB2B");
-	//document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
-	//document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
+	var todos_os_cookies = document.cookie;
+	var nomeUsuario = getCookie("nomeB2B");
+	var matriculaUsuario = getCookie("matB2B");
+	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
+	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
 	Mudarestado('minhaDivvoip');
 	Mudarestado('minhaDivmano');
 	Mudarestado('minhaDivlprout');
 	Mudarestado('minhaDivbloq');
 	Mudarestado('cop');
-	//if (nomeUsuario==''){
-	//nomeMatricula();}
+	if (nomeUsuario==''){
+	nomeMatricula();}
 	
 	};
 
