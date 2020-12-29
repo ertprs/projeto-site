@@ -483,8 +483,8 @@ for (const property in object) {
 
   else{
 	alert(`${property}: ${object[property].value}`);
-	localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
-	//localStorage.setItem(`${property}`, `${object[property].value}`);
+	//localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+	localStorage.setItem('`${property}`', `${object[property].value}`);
 
   }
   
@@ -498,7 +498,7 @@ function listandoAtendimento() {
 
   //const object = { a: 1, b: 2, c: 3 };
 
-alert(Storage.length)
+alert(localStorage.length)
 
 }
 
