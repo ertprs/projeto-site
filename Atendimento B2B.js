@@ -382,6 +382,8 @@ function carregaUsuario(){
 	var todos_os_cookies = document.cookie;
 	var nomeUsuario = getCookie("nomeB2B");
 	var matriculaUsuario = getCookie("matB2B");
+	atendimento.nomeUsuario = getCookie("nomeB2B");
+	atendimento.matriculaUsuario = getCookie("matB2B");
 	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
 	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
 	Mudarestado('minhaDivvoip');
