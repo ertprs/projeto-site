@@ -2,8 +2,47 @@
 
 window.load = carregaUsuario()
 
+atendimento = {
+	"idos":document.getElementById('idos'),
+	"nomecliente":document.getElementById('nomecliente'),
+	"nometec":document.getElementById('nometec'),
+	"ctttec": document.getElementById('ctttec'),
+	"protgps": document.getElementById('protgps'),
+	"piloto": document.getElementById('piloto'),
+	"pabxid": document.getElementById('pabxid'),
+	"ippabx": document.getElementById('ippabx'),
+	"commu": document.getElementById('commu'),
+	"mande": document.getElementById('mande'),
+	"secde": document.getElementById('secde'),
+	"slid": document.getElementById('slid'),
+	"vlans": document.getElementById('vlans'),
+	"manpa": document.getElementById('manpa'),
+	"secpa": document.getElementById('secpa'),
+	"chamado": document.getElementById('chamado'),
+	"idfibra": document.getElementById('idfibra'),
+	"cnl": document.getElementById('cnl'),
+	"es": document.getElementById('es'),
+	"at": document.getElementById('at'),
+	"codrua": document.getElementById('codrua'),
+	"nro": document.getElementById('nro'),
+	"bloq": document.getElementById('bloq'),
+	"vrf": document.getElementById('vrf'),
+	"rav": document.getElementById('rav'),
+	"ipwan": document.getElementById('ipwan'),
+	"iplan": document.getElementById('iplan'),
+	"iplop": document.getElementById('iplop'),
+	"rvt": document.getElementById('rvt'),
+	"resp": document.getElementById('resp'),
+	"cttresp": document.getElementById('cttresp'),
+	"docresp": document.getElementById('docresp'),
+	"senha": document.getElementById('senha'),
+	"obs": document.getElementById('obs'),	
+	"nomeUsuario": getCookie("nomeB2B"),
+	"matriculaUsuario": getCookie("matB2B"),
 
-
+		
+	
+}
 
 //Menu e Comandos
 
@@ -59,10 +98,6 @@ btn_ctttec.addEventListener('click', function(){copiarTexto('ctttec')});
 btn_protgps.addEventListener('click', function(){copiarTexto('protgps')});
 
 btn_obs.addEventListener('click', function(){copiarTexto('obs')});
-
-btn_salvar.addEventListener('click', function(){salvandoAtendimento(atendimento)})
-
-btn_listarAtendimento.addEventListener('click', function(){listandoAtendimento()})
 
 
 //Botões VOIP
@@ -283,66 +318,6 @@ Observações: ${atendimento.obs.value}\n
 
 // Funções
 
-
-function carregaUsuario(){
-	var todos_os_cookies = document.cookie;
-	var nomeUsuario = getCookie("nomeB2B");
-	var matriculaUsuario = getCookie("matB2B");
-	
-	atendimento = {
-	"idos":document.getElementById('idos'),
-	"nomecliente":document.getElementById('nomecliente'),
-	"nometec":document.getElementById('nometec'),
-	"ctttec": document.getElementById('ctttec'),
-	"protgps": document.getElementById('protgps'),
-	"piloto": document.getElementById('piloto'),
-	"pabxid": document.getElementById('pabxid'),
-	"ippabx": document.getElementById('ippabx'),
-	"commu": document.getElementById('commu'),
-	"mande": document.getElementById('mande'),
-	"secde": document.getElementById('secde'),
-	"slid": document.getElementById('slid'),
-	"vlans": document.getElementById('vlans'),
-	"manpa": document.getElementById('manpa'),
-	"secpa": document.getElementById('secpa'),
-	"chamado": document.getElementById('chamado'),
-	"idfibra": document.getElementById('idfibra'),
-	"cnl": document.getElementById('cnl'),
-	"es": document.getElementById('es'),
-	"at": document.getElementById('at'),
-	"codrua": document.getElementById('codrua'),
-	"nro": document.getElementById('nro'),
-	"bloq": document.getElementById('bloq'),
-	"vrf": document.getElementById('vrf'),
-	"rav": document.getElementById('rav'),
-	"ipwan": document.getElementById('ipwan'),
-	"iplan": document.getElementById('iplan'),
-	"iplop": document.getElementById('iplop'),
-	"rvt": document.getElementById('rvt'),
-	"resp": document.getElementById('resp'),
-	"cttresp": document.getElementById('cttresp'),
-	"docresp": document.getElementById('docresp'),
-	"senha": document.getElementById('senha'),
-	"obs": document.getElementById('obs'),	
-	"nomeUsuario": getCookie("nomeB2B"),
-	"matriculaUsuario": getCookie("matB2B"),
-		
-}
-
-	atendimento.nomeUsuario = getCookie("nomeB2B");
-	atendimento.matriculaUsuario = getCookie("matB2B");
-	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
-	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
-	Mudarestado('minhaDivvoip');
-	Mudarestado('minhaDivmano');
-	Mudarestado('minhaDivlprout');
-	Mudarestado('minhaDivbloq');
-	Mudarestado('cop');
-	if (nomeUsuario==''){
-	nomeMatricula();}
-	
-	};
-
 function Mudarestado(el) {
 	  var display = document.getElementById(el).style.display;
 	  if (display == "none")
@@ -397,6 +372,23 @@ function copiarTexto(valor){
 				//aqui é feito o ato de copiar para a area de trabalho com base na seleção
 				document.execCommand('copy');
 			};
+			
+
+function carregaUsuario(){
+	/*var todos_os_cookies = document.cookie;
+	var nomeUsuario = getCookie("nomeB2B");
+	var matriculaUsuario = getCookie("matB2B");
+	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
+	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;*/
+	Mudarestado('minhaDivvoip');
+	Mudarestado('minhaDivmano');
+	Mudarestado('minhaDivlprout');
+	Mudarestado('minhaDivbloq');
+	Mudarestado('cop');
+	//if (nomeUsuario==''){
+	//nomeMatricula();}
+	
+	};
 
 
 function ipgt(){
@@ -475,36 +467,11 @@ window.location.reload(true);
 		
 }
 
-//Salvando o atendimento	
 			
-function salvandoAtendimento(object) {
-  //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
-
-  //const object = { a: 1, b: 2, c: 3 };
-
-for (const property in object) {
-  if(object[property].value == ''){}
-
-  else{
-	alert(`${property}: ${object[property].value}`);
-	//localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
-	localStorage.setItem('`${property}`', `${object[property].value}`);
-
-  }
-  
-}
-
-}
+			
 
 
-function listandoAtendimento() {
-  //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 
-  //const object = { a: 1, b: 2, c: 3 };
-
-alert(localStorage.length)
-
-}
 
 
 
