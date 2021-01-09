@@ -485,6 +485,10 @@ for (const property in object) {
 	alert(`${property}: ${object[property].value}`);
 	localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 	//localStorage.setItem(`${property}`, `${object[property].value}`);
+	alert(`meuGato, Tom`);
+	localStorage.setItem('meuGato', 'Tom');
+	localStorage.setItem('meuCachorro', 'Caco');
+	localStorage.setItem('meuPeixe', 'Dourado');
 
   }
   
