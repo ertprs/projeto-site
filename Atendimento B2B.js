@@ -2,6 +2,7 @@
 
 window.load = carregaUsuario()
 
+
 atendimento = {
 	"idos":document.getElementById('idos'),
 	"nomecliente":document.getElementById('nomecliente'),
@@ -41,7 +42,6 @@ atendimento = {
 	"matriculaUsuario": getCookie("matB2B"),
 
 		
-	
 }
 
 //Menu e Comandos
@@ -98,6 +98,10 @@ btn_ctttec.addEventListener('click', function(){copiarTexto('ctttec')});
 btn_protgps.addEventListener('click', function(){copiarTexto('protgps')});
 
 btn_obs.addEventListener('click', function(){copiarTexto('obs')});
+
+btn_salvar.addEventListener('click', function(){salvandoAtendimento(atendimento)})
+
+btn_listarAtendimento.addEventListener('click', function(){listandoAtendimento()})
 
 
 //Botões VOIP
@@ -377,9 +381,9 @@ function copiarTexto(valor){
 function carregaUsuario(){
 	/*var todos_os_cookies = document.cookie;
 	var nomeUsuario = getCookie("nomeB2B");
-	var matriculaUsuario = getCookie("matB2B");
+	var matriculaUsuario = getCookie("matB2B");*/
 	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
-	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;*/
+	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
 	Mudarestado('minhaDivvoip');
 	Mudarestado('minhaDivmano');
 	Mudarestado('minhaDivlprout');
@@ -467,11 +471,36 @@ window.location.reload(true);
 		
 }
 
+//Salvando o atendimento	
 			
-			
+function salvandoAtendimento(object) {
+  //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+
+  //const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  if(object[property].value == ''){}
+
+  else{
+	alert(`${property}: ${object[property].value}`);
+	localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+	//localStorage.setItem(`${property}`, `${object[property].value}`);
+
+  }
+  
+}
+
+}
 
 
+function listandoAtendimento(object) {
+  //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 
+  //const object = { a: 1, b: 2, c: 3 };
+
+alert(Storage.length)
+
+}
 
 
 
