@@ -101,7 +101,7 @@ btn_obs.addEventListener('click', function(){copiarTexto('obs')});
 
 btn_salvar.addEventListener('click', function(){salvandoAtendimento(atendimento)})
 
-btn_listarAtendimento.addEventListener('click', function(){listandoAtendimento()})
+btn_listarAtendimento.addEventListener('click', function(){listandoAtendimento('meuAtendimento')})
 
 
 //Botões VOIP
@@ -379,9 +379,9 @@ function copiarTexto(valor){
 			
 
 function carregaUsuario(){
-	var todos_os_cookies = document.cookie;
+	/*var todos_os_cookies = document.cookie;
 	var nomeUsuario = getCookie("nomeB2B");
-	var matriculaUsuario = getCookie("matB2B");
+	var matriculaUsuario = getCookie("matB2B");*/
 	document.getElementById("nomeUsuario").innerHTML = nomeUsuario;
 	document.getElementById("matriculaUsuario").innerHTML = matriculaUsuario;
 	Mudarestado('minhaDivvoip');
@@ -389,8 +389,8 @@ function carregaUsuario(){
 	Mudarestado('minhaDivlprout');
 	Mudarestado('minhaDivbloq');
 	Mudarestado('cop');
-	if (nomeUsuario==''){
-	nomeMatricula();}
+	//if (nomeUsuario==''){
+	//nomeMatricula();}
 	
 	};
 
@@ -477,32 +477,43 @@ function salvandoAtendimento(object) {
   //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 
   //const object = { a: 1, b: 2, c: 3 };
+let atd = []
 
 for (const property in object) {
   if(object[property].value == ''){}
 
   else{
+	atd.push(`${property}: ${object[property].value}`);
 	alert(`${property}: ${object[property].value}`);
-	localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+
 	//localStorage.setItem(`${property}`, `${object[property].value}`);
-	alert(`meuGato, Tom`);
-	localStorage.setItem('meuGato', 'Tom');
-	localStorage.setItem('meuCachorro', 'Caco');
-	localStorage.setItem('meuPeixe', 'Dourado');
 
   }
-  
+
+
 }
 
+localStorage.setItem('meuAtendimento', atd);
+
+alert(atd)  
 }
 
 
-function listandoAtendimento(object) {
+function listandoAtendimento(listaAtendimento) {
   //localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
 
   //const object = { a: 1, b: 2, c: 3 };
 
-alert(Storage.length)
+var currentAnimal = localStorage.getItem(listaAtendimento);
+alert(currentAnimal)
+alert(currentAnimal)
+
+newNode = currentAnimal.split(',')
+
+alert(newNode.length)
+
+  
+
 
 }
 
